@@ -1,0 +1,36 @@
+@import 'mixins';
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.register{
+    @include formulaire;
+}
+
+.login{
+    @include formulaire;
+}
+
+.conv{
+    border:2px solid gold;
+    width: 40%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .bubble{
+        @include whatsup;
+    }
+}
+
+    

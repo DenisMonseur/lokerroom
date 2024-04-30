@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  gap: 10px;
+  border: 2px solid black;
+  margin-top: 80px;
+}
+.register label {
+  font-weight: bold;
+}
+.register input {
+  width: 70%;
+}
+.register button {
+  background-color: yellow;
+  margin-top: 20px;
+}
+.register .alert {
+  color: red;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  gap: 10px;
+  border: 2px solid black;
+  margin-top: 80px;
+}
+.login label {
+  font-weight: bold;
+}
+.login input {
+  width: 70%;
+}
+.login button {
+  background-color: yellow;
+  margin-top: 20px;
+}
+.login .alert {
+  color: red;
+}
+
+.conv {
+  border: 2px solid gold;
+  width: 40%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.conv .bubble {
+  width: fit-content;
+  background-color: greenyellow;
+  padding: 0px 5px;
+  border-radius: 10px;
+}

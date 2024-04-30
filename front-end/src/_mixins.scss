@@ -1,0 +1,33 @@
+@mixin formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    gap: 10px;
+    border: 2px solid black;
+    margin-top: 80px;
+
+    label{
+        font-weight: bold;
+    }
+
+    input{
+        width: 70%;
+    }
+
+    button{
+        background-color: yellow;
+        margin-top: 20px;
+    }
+
+    .alert{
+        color: red;
+    }
+}
+
+@mixin whatsup {
+    width: fit-content;
+        background-color: greenyellow;
+        padding: 0px 5px;
+        border-radius: 10px;
+}
