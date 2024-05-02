@@ -1,74 +1,162 @@
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.register {
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
-  gap: 10px;
-  border: 2px solid black;
-  margin-top: 80px;
+  justify-content: flex-start;
+  gap: 60px;
+  height: 100vh;
+  background-color: #121212;
+  color: #FFFFFF;
+  background-image: url("./assets/lokerroom.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
-.register label {
+
+button {
+  background-color: #121212;
+  color: #FFFFFF;
   font-weight: bold;
 }
-.register input {
-  width: 70%;
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #121212;
 }
-.register button {
-  background-color: yellow;
-  margin-top: 20px;
+.navbar h1 {
+  background-image: linear-gradient(to right, #ec1818, #9d00ff);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.register .alert {
-  color: red;
+.navbar .right {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .login {
+  background-color: #333333;
+  border-radius: 10px;
+  width: 350px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 30%;
-  gap: 10px;
-  border: 2px solid black;
-  margin-top: 80px;
-}
-.login label {
-  font-weight: bold;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 60px;
 }
 .login input {
   width: 70%;
 }
-.login button {
-  background-color: yellow;
-  margin-top: 20px;
-}
-.login .alert {
-  color: red;
+.login label {
+  font-weight: bold;
 }
 
-.conv {
-  border: 2px solid gold;
-  width: 40%;
-  height: 350px;
+.register {
+  background-color: #333333;
+  border-radius: 10px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 60px;
+}
+.register input {
+  width: 70%;
+}
+.register label {
+  font-weight: bold;
+}
+
+.allChatPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+.allChatPage .lobbyMenu {
+  width: 15%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  background-color: #333333;
 }
-.conv .bubble {
-  width: fit-content;
-  background-color: greenyellow;
-  padding: 0px 5px;
+.allChatPage .lobbyMenu form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.allChatPage .lobbyMenu .lobbyList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+}
+.allChatPage .lobbyMenu .lobbyList .lobbyCard {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom, #6e0d88, #750d0d);
+  padding: 5px 0px;
   border-radius: 10px;
+}
+.allChatPage .chatRoom {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.allChatPage .chatRoom .conv {
+  background-color: #333333;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.allChatPage .chatRoom .conv .bubble {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom, #6e0d88, #750d0d);
+  padding: 5px 0px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #6e0d88, #9d00ff);
+  padding: 5px 5px;
+  width: fit-content;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.allChatPage .chatRoom .newMessage {
+  height: 20%;
+}
+.allChatPage .chatRoom .newMessage input {
+  width: 87%;
+  height: 50%;
+  background-color: whitesmoke;
+}
+.allChatPage .chatRoom .newMessage button {
+  height: 55%;
+  width: 12%;
+}
+
+.link {
+  text-decoration: none;
+  background-image: linear-gradient(to right, #9d00ff, #ec1818);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#jeLesBrise {
+  text-decoration: none;
+  color: #FFFFFF;
 }

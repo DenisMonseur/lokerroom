@@ -5,19 +5,20 @@ function NavBar() {
     return(
         <>
         <div className="navbar">
-        <Link to='/api/auth/register'>
-            <h3>Register</h3>
+        <div className="left">
+            <Link to='/api/lobby' className="link" id="jeLesBrise">
+        <h3>Chat room</h3>
         </Link>
-        <Link to='/api/auth/login'>
+        </div>
+        <h1>The LokerRoom</h1>
+        <div className="right">
+            <Link to='/api/auth/login' className="link">
             <h3>Login</h3>
         </Link>
-        <h1>The Lokerroom</h1>
-        <Link to='/api/messages/new'>
-            <h3>New Message</h3>
+        <Link to='/api/auth/register' className="link">
+            <h3>Register</h3>
         </Link>
-        <Link to='/api/lobby'>
-        <h3>Lobby</h3>
-        </Link>
+        </div>
         </div>
         </>
     )

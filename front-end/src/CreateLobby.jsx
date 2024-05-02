@@ -29,15 +29,13 @@ function CreateLobby() {
     }
 
     return (
-        <>
-        <h1>Chat room</h1>
         <form onSubmit={submit}>
-            <label htmlFor="lobby">New Lobby Name: </label>
-            <input type="text" id="lobby" value={lobbyName} onChange={(e) => setLobbyName(e.target.value)} />
+            <input type="text" id="lobby" value={lobbyName}
+            placeholder="Enter new lobby name"
+             onChange={(e) => setLobbyName(e.target.value)} />
             <button type="submit">Create lobby</button>
             <p>{responseMessage}</p>
         </form>
-        </>
     )
 }
 

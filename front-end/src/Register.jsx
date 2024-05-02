@@ -35,6 +35,7 @@ function Register() {
     return (
         <>
         <form onSubmit={submit} className="register">
+            <h2>Register</h2>
             <label htmlFor="email">email :</label>
             <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <label htmlFor="nickname">nickname :</label>

@@ -24,6 +24,7 @@ function Login() {
         console.log(data)
         if (response.ok) {
                 localStorage.setItem('jwtToken', data.token);
+                localStorage.setItem('user_id', data.user_id);
             }
         setResMessage(data.message || data.error)
         
@@ -36,6 +37,7 @@ function Login() {
     return (
         <>
         <form onSubmit={submit} className="login">
+            <h2>Login</h2>
             <label htmlFor="email"> email :</label>
             <input type="text"  id="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
             <label htmlFor="password"> password :</label>
@@ -43,7 +45,6 @@ function Login() {
             <button type="submit">Login</button>
             <p className="alert">{resMessage}</p>
         </form>
-        
         </>
     )
 }

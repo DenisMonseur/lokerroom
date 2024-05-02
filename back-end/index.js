@@ -86,7 +86,8 @@ app.post("/api/auth/login", async (req, res) => {
         expiresIn: "1h",
       }
     );
-    return res.json({ message: "Login successful !!", token });
+    const user_id = q.rows[0].id;
+    return res.json({ message: "Login successful !!", token, user_id });
     //return res.send({ token })
   } catch (err) {
     console.log(err);
@@ -112,7 +113,7 @@ app.use(async (req, res, next) => {
   }
 
   return res.status(403).send("Invalid token");
-});
+}); 
 
 app.post("/api/lobby", async (req, res) => {
   const { lobby_name } = req.body;
@@ -136,7 +137,7 @@ app.get("/api/lobby", async (req, res) => {
   res.send(lobbies.rows);
 });
 
-app.post("/api/messages/new", async (req, res) => {
+/*app.post("/api/messages/new", async (req, res) => {
   // res.send({content: req.body.content, user_id: req.user.id, msg_time: Date.now()})
   const { content } = req.body;
 
@@ -151,9 +152,9 @@ app.post("/api/messages/new", async (req, res) => {
       }
     }
   );
-});
+});*/
 
-app.get("/api/messages", async (req, res) => {
+/*app.get("/api/messages", async (req, res) => {
   try {
     const messages = await pool.query("SELECT * FROM messages");
     res.json(messages.rows);
@@ -161,6 +162,37 @@ app.get("/api/messages", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
+});*/
+
+app.get("/api/messages/:lobbyId", async (req, res) => {
+  const { lobbyId } = req.params;
+
+  try {
+    const messages = await pool.query(
+      "SELECT * FROM messages WHERE lobby_id = $1",
+      [lobbyId]
+    );
+    res.json(messages.rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.post(`/api/messages/new/:lobbyId`, async (req, res) => {
+  const { lobbyId } = req.params;
+  const { content, user_id } = req.body;
+  pool.query(
+    "INSERT INTO messages (content, user_id, lobby_id) VALUES ($1, $2, $3)",
+    [content, user_id, lobbyId],
+    (error, results) => {
+      if (error) {
+        res.json({ err: error });
+      } else {
+        res.json({ msg: "message has been sent" });
+      }
+    }
+  );
 });
 
 app.listen(process.env.PORT || 3000, () => {

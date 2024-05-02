@@ -1,36 +1,144 @@
-@import 'mixins';
+@import '_colors.scss';
+@import '_mixins.scss';
+
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+    height: 100vh;
+    background-color: $dark;
+    color: $white;
+    background-image: url('./assets/lokerroom.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+button{
+    background-color: $dark;
+    color: $white;
+    font-weight: bold;
+}
+
 .navbar{
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-}
-.main{
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 20px;
-}
+    justify-content: space-evenly;
+    background-color: $dark;
 
-.register{
-    @include formulaire;
-}
+    h1{
+        background-image: linear-gradient(to right, $light-red, $light-purple);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            color: transparent;
+    }
 
-.login{
-    @include formulaire;
-}
-
-.conv{
-    border:2px solid gold;
-    width: 40%;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    .bubble{
-        @include whatsup;
+    .right{
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
-    
+.login{
+    @include form;
+}
+
+.register{
+    @include form;
+}
+
+.allChatPage{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+
+    .lobbyMenu{
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: $shadow;
+
+            form{
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+            }
+
+            .lobbyList{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 70%;
+
+                    .lobbyCard {
+                            @include bulle;
+                        }
+            }
+    }
+
+    .chatRoom{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+            .conv {
+                background-color: $shadow;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .bubble{
+                    @include bulle; 
+                    background:linear-gradient(to bottom, $dark-purple, $light-purple);
+                    padding: 5px 5px;
+                    width: fit-content;
+                    margin-left: 20px;
+                    margin-top: 20px;
+                }
+            }
+
+            .newMessage{
+                height: 20%;
+
+                input{
+                    width: 87%;
+                    height: 50%;
+                    background-color: whitesmoke;
+                }
+
+                button{
+                    height: 55%;
+                    width: 12%;
+                }
+            }
+    }
+}
+
+
+.link {
+    text-decoration: none;
+    background-image: linear-gradient(to right, $light-purple , $light-red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#jeLesBrise{
+    text-decoration: none;
+    color: $white;
+}

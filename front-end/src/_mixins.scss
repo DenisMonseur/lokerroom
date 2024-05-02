@@ -1,33 +1,26 @@
-@mixin formulaire {
+@mixin form{
+    background-color: $shadow;
+    border-radius: 10px;
+    width: 350px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 30%;
-    gap: 10px;
-    border: 2px solid black;
-    margin-top: 80px;
-
-    label{
-        font-weight: bold;
-    }
-
-    input{
-        width: 70%;
-    }
-
-    button{
-        background-color: yellow;
-        margin-top: 20px;
-    }
-
-    .alert{
-        color: red;
-    }
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 60px;
+    
+        input {
+            width: 70%;
+        }
+    
+        label {
+            font-weight: bold;
+        }
 }
 
-@mixin whatsup {
-    width: fit-content;
-        background-color: greenyellow;
-        padding: 0px 5px;
-        border-radius: 10px;
+@mixin bulle {
+    display: flex;
+    justify-content: center;
+    background:linear-gradient(to bottom, $dark-purple, $dark-red);
+    padding: 5px 0px;
+    border-radius: 10px;
 }

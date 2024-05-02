@@ -7,7 +7,7 @@ function Message({ lobbyId }) {
     const fetchMessages = async () => {
       try {
         const token = localStorage.getItem('jwtToken');
-        const response = await fetch(`http://localhost:3000/api/messages?lobbyId=${lobbyId}`, {
+        const response = await fetch(`http://localhost:3000/api/messages/${lobbyId}`, {
           method: 'GET',
           headers: {
             'Content-type': 'application/json',
@@ -26,14 +26,15 @@ function Message({ lobbyId }) {
 
   return (
     <>
-      <h1>Chat room</h1>
       <div className="conv">
         {messages.map(message => (
-          <div key={message.id} className="bubble"><p>{message.content}</p></div>
+          <div key={message.id} className="bubble">
+            <p>{message.content}</p>
+          </div>
         ))}
       </div>
     </>
   );
 }
 
-export default Message
+export default Message;
