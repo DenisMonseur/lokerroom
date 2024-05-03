@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 function Message({ lobbyId }) {
   const [messages, setMessages] = useState([]);
@@ -27,10 +27,12 @@ function Message({ lobbyId }) {
   return (
     <>
       <div className="conv">
-        {messages.map(message => (
+        {messages.map(message => (<>
           <div key={message.id} className="bubble">
+            <legend>{message.nickname}</legend>
             <p>{message.content}</p>
           </div>
+          </>
         ))}
       </div>
     </>

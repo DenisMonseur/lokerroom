@@ -2,15 +2,14 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Register from './Register'
 import Login from './Login'
 import NavBar from './NavBar'
-import CreateLobby from './CreateLobby'
 import DisplayLobbies from './DisplayLobbies'
 
 function App() {
-  return (
+  return (  
     <Router>
     <NavBar/>
     <Routes>
-      <Route path='/' element={<h1>Welcome to Lokerroom blablablablabla</h1>}/>
+      <Route path='/' element={<h1 className='entry'>Welcome to Lokerroom, please login or register</h1>}/>
       
       <Route path='/api/auth/register' element={
       <div className='form'>

@@ -113,7 +113,7 @@ app.use(async (req, res, next) => {
   }
 
   return res.status(403).send("Invalid token");
-}); 
+});
 
 app.post("/api/lobby", async (req, res) => {
   const { lobby_name } = req.body;
@@ -137,39 +137,12 @@ app.get("/api/lobby", async (req, res) => {
   res.send(lobbies.rows);
 });
 
-/*app.post("/api/messages/new", async (req, res) => {
-  // res.send({content: req.body.content, user_id: req.user.id, msg_time: Date.now()})
-  const { content } = req.body;
-
-  pool.query(
-    "INSERT INTO messages (content, user_id,lobby_id) VALUES ($1, $2)",
-    [content, req.user.id],
-    (error, results) => {
-      if (error) {
-        res.json({ err: error });
-      } else {
-        res.json({ msg: "message has been sent" });
-      }
-    }
-  );
-});*/
-
-/*app.get("/api/messages", async (req, res) => {
-  try {
-    const messages = await pool.query("SELECT * FROM messages");
-    res.json(messages.rows);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});*/
-
 app.get("/api/messages/:lobbyId", async (req, res) => {
   const { lobbyId } = req.params;
 
   try {
     const messages = await pool.query(
-      "SELECT * FROM messages WHERE lobby_id = $1",
+      "SELECT messages.*, users.nickname FROM messages INNER JOIN users ON messages.user_id = users.id WHERE messages.lobby_id = $1",
       [lobbyId]
     );
     res.json(messages.rows);

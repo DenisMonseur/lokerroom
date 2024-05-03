@@ -15,6 +15,9 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
+    .entry{
+        margin-top: 110px;
+    }
 }
 
 button{
@@ -100,14 +103,18 @@ button{
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                overflow-y: auto;
 
                 .bubble{
                     @include bulle; 
                     background:linear-gradient(to bottom, $dark-purple, $light-purple);
-                    padding: 5px 5px;
+                    padding: 5px 20px 5px 5px;
                     width: fit-content;
                     margin-left: 20px;
                     margin-top: 20px;
+                        legend{
+                            font-style: italic;
+                        }
                 }
             }
 

@@ -13,6 +13,9 @@
   background-position: center;
   height: 100vh;
 }
+#root .entry {
+  margin-top: 110px;
+}
 
 button {
   background-color: #121212;
@@ -121,6 +124,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: auto;
 }
 .allChatPage .chatRoom .conv .bubble {
   display: flex;
@@ -129,10 +133,13 @@ button {
   padding: 5px 0px;
   border-radius: 10px;
   background: linear-gradient(to bottom, #6e0d88, #9d00ff);
-  padding: 5px 5px;
+  padding: 5px 20px 5px 5px;
   width: fit-content;
   margin-left: 20px;
   margin-top: 20px;
+}
+.allChatPage .chatRoom .conv .bubble legend {
+  font-style: italic;
 }
 .allChatPage .chatRoom .newMessage {
   height: 20%;
